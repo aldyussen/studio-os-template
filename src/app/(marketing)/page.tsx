@@ -115,7 +115,7 @@ export default function Home() {
           <div className="mb-20 text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">результат</p>
             <h2 className="font-heading text-[clamp(2rem,6vw,4.5rem)] font-black uppercase leading-[1] text-white">
-              ЧТО ВЫ ПОЛУЧИТЕ<br />ЗА 2 ДНЯ
+              ЧТО ВЫ ПОЛУЧИТЕ<br />В РЕЗУЛЬТАТЕ 2Х ДНЕЙ
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm text-white/40 sm:text-base">
               Уникальную структуру роста продаж, выход на новый уровень и большой отрыв от конкурентов
@@ -124,10 +124,10 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
             {[
-              { img: '/images/benefit-trends.png',  tag: 'ТРЕНДЫ',   text: 'Последние тренды маркетинга в бьюти сфере' },
-              { img: '/images/benefit-money.png',   tag: 'ПРОДАЖИ',  text: 'Эффективный отдел продаж, который выполняет планы' },
-              { img: '/images/benefit-plan.png',    tag: 'ПЛАН',     text: 'Пошаговая инструкция как сделать X2 в бизнесе' },
-              { img: '/images/benefit-team.png',    tag: 'КОМАНДА',  text: 'Команда мечты для захвата рынка' },
+              { img: '/images/benefit-trends.png',      tag: 'ТРЕНДЫ',  text: 'Последние тренды маркетинга в бьюти сфере' },
+              { img: '/images/benefit-money.png',       tag: 'ПРОДАЖА', text: 'Эффективный отдел продаж, который выполняет планы' },
+              { img: '/images/benefit-plan.png',        tag: 'РОСТ',    text: 'Пошаговая инструкция как сделать X2 в бизнесе' },
+              { img: '/images/figma/team-puzzle.png',   tag: 'КОМАНДА', text: 'Команда мечты для захвата рынка' },
             ].map((item, i) => (
               <div key={i} className="group flex flex-col items-center gap-5 rounded-2xl border border-white/8 bg-white/[0.04] p-6 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-white/[0.07]">
                 <span className="rounded-full bg-primary px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_20px_oklch(0.58_0.26_335/0.5)]">
@@ -274,10 +274,13 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl opacity-60"
                 style={{ background: 'radial-gradient(ellipse at center, oklch(0.45 0.24 305 / 0.40) 0%, transparent 70%)' }} />
-              <div className="relative overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10">
                 <div className="aspect-[4/3]">
-                  <Image src="/images/speaker-event2.png" alt="Вадим Innova" fill className="object-cover" />
+                  <Image src="/images/figma/vadim-hero.png" alt="Вадим Innova" fill className="object-cover" />
                 </div>
+              </div>
+              <div className="absolute -bottom-5 left-6 w-[230px] drop-shadow-2xl sm:left-8 sm:w-[280px]">
+                <Image src="/images/figma/ig-badge.png" alt="@vadim.innova в Instagram" width={280} height={163} className="h-auto w-full object-contain" />
               </div>
             </div>
 
