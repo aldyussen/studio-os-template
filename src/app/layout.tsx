@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { fontSans, fontMono } from '@/lib/fonts'
+import { fontSans, fontMono, fontDisplay } from '@/lib/fonts'
 import { generatePageMetadata } from '@/lib/metadata'
 import { siteConfig } from '@/config/site'
 import './globals.css'
@@ -24,7 +24,7 @@ export default function RootLayout({
     // (added in M15) injects the 'dark' class before hydration.
     <html
       lang="en"
-      className={`${fontSans.variable} ${fontMono.variable} h-full antialiased dark`}
+      className={`${fontSans.variable} ${fontMono.variable} ${fontDisplay.variable} h-full antialiased dark`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">{children}</body>
