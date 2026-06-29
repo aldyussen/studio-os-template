@@ -1,8 +1,9 @@
-import { Geist, Geist_Mono, Unbounded } from 'next/font/google'
+import { Inter, Comfortaa, Geist_Mono } from 'next/font/google'
 
-export const fontSans = Geist({
+// Body + headings — Inter matches the Figma source (font family/Font 1). Cyrillic-ready.
+export const fontSans = Inter({
   variable: '--font-sans',
-  subsets: ['latin'],
+  subsets: ['latin', 'cyrillic'],
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800', '900'],
 })
@@ -13,10 +14,10 @@ export const fontMono = Geist_Mono({
   display: 'swap',
 })
 
-// Display / heading font — wide, heavy, premium. Cyrillic-ready.
-export const fontDisplay = Unbounded({
-  variable: '--font-heading',
+// Logotype font — Comfortaa (font family/Font 2 in the Figma file).
+export const fontDisplay = Comfortaa({
+  variable: '--font-logo',
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
-  weight: ['700', '800', '900'],
+  weight: ['400', '500', '600', '700'],
 })

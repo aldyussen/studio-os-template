@@ -24,14 +24,15 @@ export interface SiteConfig {
 }
 
 export const siteConfig = {
-  name: 'Вадим Innova',
-  description: 'Первая в Казахстане конференция для бьюти-бизнеса. 2-дневный интенсив — как выйти на 5–10+ млн чистыми.',
+  name: 'Екатерина Уколова — закрытый тренинг',
+  description:
+    'Сделать из бизнесмена долларового миллионера. Система из 8 шагов масштабирования для владельцев бизнеса с оборотом от $10 000.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://studio-os-template.vercel.app',
   ogImage: '/og.png',
-  author: 'Вадим Innova',
+  author: 'Екатерина Уколова',
   locale: 'ru_RU',
-  themeColor: '#0a0a0a',
-  keywords: ['бьюти бизнес', 'интенсив', 'бьюти конференция', 'Казахстан', 'салон красоты'],
+  themeColor: '#0d0d10',
+  keywords: ['Уколова', 'тренинг для бизнеса', 'масштабирование', 'отдел продаж', 'миллионер'],
   socials: {
     x: '',
     linkedin: '',
