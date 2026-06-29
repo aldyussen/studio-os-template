@@ -29,59 +29,75 @@ export default function Home() {
 
       {/* ═══════════ 1. HERO ═══════════ */}
       <section className="relative flex min-h-screen flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 -z-20">
-          <Image src="/images/hero-bg.jpg" alt="" fill priority className="object-cover object-center" />
-          <div className="absolute inset-0 bg-[#080808]/60" />
-        </div>
-        <div className="pointer-events-none absolute -bottom-32 -left-32 -z-10 h-[600px] w-[600px] rounded-full"
-          style={{ background: 'radial-gradient(circle, oklch(0.45 0.28 335 / 0.75) 0%, transparent 70%)' }} />
-        <div className="pointer-events-none absolute -right-32 -top-32 -z-10 h-[500px] w-[500px] rounded-full"
-          style={{ background: 'radial-gradient(circle, oklch(0.35 0.20 295 / 0.50) 0%, transparent 70%)' }} />
+        <div className="pointer-events-none absolute -right-40 -top-32 -z-10 h-[700px] w-[700px] rounded-full"
+          style={{ background: 'radial-gradient(circle, oklch(0.50 0.28 335 / 0.55) 0%, transparent 70%)' }} />
+        <div className="pointer-events-none absolute -bottom-40 -left-40 -z-10 h-[650px] w-[650px] rounded-full"
+          style={{ background: 'radial-gradient(circle, oklch(0.40 0.24 295 / 0.45) 0%, transparent 70%)' }} />
 
-        <div className="mx-auto w-full max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
-          <div className="mb-8 flex items-center gap-3">
-            <Image src="/images/trophy-kz.png" alt="" width={32} height={32} className="object-contain" />
-            <span className="rounded-full border border-white/20 bg-white/5 px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60 backdrop-blur-sm">
-              Первая конференция для бьюти-бизнеса в Казахстане
-            </span>
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:py-32 lg:px-8">
+          <div className="order-2 lg:order-1">
+            <div className="mb-7 flex items-center gap-3">
+              <Image src="/images/trophy-kz.png" alt="" width={28} height={28} className="object-contain" />
+              <span className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur-sm sm:text-[11px]">
+                Первая офлайн-конференция для бьюти-бизнеса в Казахстане
+              </span>
+            </div>
+
+            <div className="mb-6 flex items-center gap-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-white/40">от</span>
+              <Image src="/images/figma/innova-wordmark.png" alt="Vadim Innova" width={150} height={37} className="object-contain" />
+            </div>
+
+            <h1 className="mb-7 font-heading text-[clamp(2.6rem,6.5vw,5.5rem)] font-black uppercase leading-[0.95] tracking-tight text-white">
+              Как в бьюти<br />
+              бизнесе выйти на{' '}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: 'linear-gradient(135deg, oklch(0.72 0.30 340) 0%, oklch(0.55 0.28 300) 100%)' }}
+              >
+                5–10+ млн
+              </span>{' '}
+              чистыми
+            </h1>
+
+            <p className="mb-9 max-w-lg text-base text-white/50 sm:text-lg">
+              Двухдневный интенсив — все инструменты, чтобы выйти на новый уровень
+              и сделать x2 в своём бизнесе.
+            </p>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <PinkBtn href="#form">Оставить заявку</PinkBtn>
+              <GhostBtn href="#program">Программа</GhostBtn>
+            </div>
+
+            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-6 border-t border-white/10 pt-8">
+              {[
+                { n: '200+', t: 'участников' },
+                { n: '2', t: 'дня практики' },
+                { n: '15+', t: 'студий спикера' },
+                { n: '1.1 млрд', t: 'выручка сети' },
+              ].map((s) => (
+                <div key={s.n}>
+                  <p className="font-heading text-2xl font-black text-primary">{s.n}</p>
+                  <p className="text-xs uppercase tracking-widest text-white/40">{s.t}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="mb-8 font-heading text-[clamp(3rem,10vw,7.5rem)] font-black uppercase leading-[0.95] tracking-tight text-white">
-            Как в бьюти<br />
-            бизнесе выйти<br />
-            на{' '}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(135deg, oklch(0.70 0.30 340) 0%, oklch(0.55 0.28 300) 100%)' }}
-            >
-              5–10+ млн
-            </span>
-            <br />
-            чистыми
-          </h1>
-
-          <p className="mb-10 max-w-lg text-base text-white/50 sm:text-lg">
-            Двухдневный интенсив — все инструменты, чтобы выйти на новый уровень
-            и сделать x2 в своём бизнесе.
-          </p>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <PinkBtn href="#form">Оставить заявку</PinkBtn>
-            <GhostBtn href="#program">Программа</GhostBtn>
-          </div>
-
-          <div className="mt-14 flex flex-wrap gap-8 border-t border-white/10 pt-10">
-            {[
-              { n: '200+', t: 'участников' },
-              { n: '2', t: 'дня практики' },
-              { n: '15+', t: 'студий спикера' },
-              { n: '1.1 млрд', t: 'выручка сети' },
-            ].map((s) => (
-              <div key={s.n}>
-                <p className="font-heading text-2xl font-black text-primary">{s.n}</p>
-                <p className="text-xs uppercase tracking-widest text-white/40">{s.t}</p>
-              </div>
-            ))}
+          <div className="relative order-1 lg:order-2">
+            <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-70"
+              style={{ background: 'radial-gradient(ellipse at 60% 40%, oklch(0.52 0.28 335 / 0.55) 0%, transparent 70%)' }} />
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 shadow-[0_30px_120px_-20px_oklch(0.50_0.26_335/0.55)]">
+              <Image
+                src="/images/figma/vadim-hero.png"
+                alt="Вадим Innova — спикер интенсива"
+                width={1100}
+                height={760}
+                priority
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -99,7 +115,7 @@ export default function Home() {
           <div className="mb-20 text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">результат</p>
             <h2 className="font-heading text-[clamp(2rem,6vw,4.5rem)] font-black uppercase leading-[1] text-white">
-              ЧТО ВЫ ПОЛУЧИТЕ<br />ЗА 2 ДНЯ
+              ЧТО ВЫ ПОЛУЧИТЕ<br />В РЕЗУЛЬТАТЕ 2Х ДНЕЙ
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm text-white/40 sm:text-base">
               Уникальную структуру роста продаж, выход на новый уровень и большой отрыв от конкурентов
@@ -108,10 +124,10 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
             {[
-              { img: '/images/benefit-trends.png',  tag: 'ТРЕНДЫ',   text: 'Последние тренды маркетинга в бьюти сфере' },
-              { img: '/images/benefit-money.png',   tag: 'ПРОДАЖИ',  text: 'Эффективный отдел продаж, который выполняет планы' },
-              { img: '/images/benefit-plan.png',    tag: 'ПЛАН',     text: 'Пошаговая инструкция как сделать X2 в бизнесе' },
-              { img: '/images/benefit-team.png',    tag: 'КОМАНДА',  text: 'Команда мечты для захвата рынка' },
+              { img: '/images/benefit-trends.png',      tag: 'ТРЕНДЫ',  text: 'Последние тренды маркетинга в бьюти сфере' },
+              { img: '/images/benefit-money.png',       tag: 'ПРОДАЖА', text: 'Эффективный отдел продаж, который выполняет планы' },
+              { img: '/images/benefit-plan.png',        tag: 'РОСТ',    text: 'Пошаговая инструкция как сделать X2 в бизнесе' },
+              { img: '/images/figma/team-puzzle.png',   tag: 'КОМАНДА', text: 'Команда мечты для захвата рынка' },
             ].map((item, i) => (
               <div key={i} className="group flex flex-col items-center gap-5 rounded-2xl border border-white/8 bg-white/[0.04] p-6 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-white/[0.07]">
                 <span className="rounded-full bg-primary px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_20px_oklch(0.58_0.26_335/0.5)]">
@@ -258,10 +274,13 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl opacity-60"
                 style={{ background: 'radial-gradient(ellipse at center, oklch(0.45 0.24 305 / 0.40) 0%, transparent 70%)' }} />
-              <div className="relative overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10">
                 <div className="aspect-[4/3]">
-                  <Image src="/images/speaker-event2.png" alt="Вадим Innova" fill className="object-cover" />
+                  <Image src="/images/figma/vadim-hero.png" alt="Вадим Innova" fill className="object-cover" />
                 </div>
+              </div>
+              <div className="absolute -bottom-5 left-6 w-[230px] drop-shadow-2xl sm:left-8 sm:w-[280px]">
+                <Image src="/images/figma/ig-badge.png" alt="@vadim.innova в Instagram" width={280} height={163} className="h-auto w-full object-contain" />
               </div>
             </div>
 
