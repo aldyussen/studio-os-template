@@ -24,14 +24,14 @@ export interface SiteConfig {
 }
 
 export const siteConfig = {
-  name: 'Your Company',
-  description: 'A brief description of your company and what you do.',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com',
+  name: 'Вадим Innova',
+  description: 'Первая в Казахстане конференция для бьюти-бизнеса. 2-дневный интенсив — как выйти на 5–10+ млн чистыми.',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://studio-os-template.vercel.app',
   ogImage: '/og.png',
-  author: 'Your Company',
-  locale: 'en_US',
-  themeColor: '#ffffff',
-  keywords: [],
+  author: 'Вадим Innova',
+  locale: 'ru_RU',
+  themeColor: '#0a0a0a',
+  keywords: ['бьюти бизнес', 'интенсив', 'бьюти конференция', 'Казахстан', 'салон красоты'],
   socials: {
     x: '',
     linkedin: '',
