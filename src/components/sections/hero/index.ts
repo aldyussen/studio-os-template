@@ -1,0 +1,1 @@
+export { HeroCentered } from './HeroCentered'
