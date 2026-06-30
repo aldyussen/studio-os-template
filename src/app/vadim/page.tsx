@@ -8,9 +8,9 @@ import { Gallery } from '@/components/sections/vadim/Gallery'
 import { Marquee } from '@/components/sections/vadim/Marquee'
 import { FooterCta } from '@/components/sections/vadim/FooterCta'
 
-export default function Home() {
+export default function VadimPage() {
   return (
-    <div id="top" className="bg-[#070707]">
+    <div id="top" className="scroll-mt-0 bg-[#070707]">
       <Hero />
       <Benefits />
       <Audience />
