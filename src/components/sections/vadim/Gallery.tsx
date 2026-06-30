@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { interLocal } from './inter-local'
 
@@ -10,7 +13,26 @@ const PHOTOS = [
   { src: '/images/section7/photo4.webp', left: 1550 },
 ]
 
+// TODO: заменить на реальные YouTube ID роликов Вадима
+const VIDEOS: { left: number; img: string; play: number; youtubeId: string }[] = [
+  { left: 380, img: '/images/section7/video1.webp', play: 620, youtubeId: 'ScMzIvxBSi4' },
+  { left: 980, img: '/images/section7/video2.webp', play: 1220, youtubeId: 'ScMzIvxBSi4' },
+]
+
 export function Gallery() {
+  const [activeId, setActiveId] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!activeId) return
+    document.body.style.overflow = 'hidden'
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setActiveId(null)
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [activeId])
+
   return (
     <section
       className={`${interLocal.variable} relative w-full overflow-hidden bg-black`}
@@ -39,19 +61,24 @@ export function Gallery() {
           <p className="text-[62.8px] font-black uppercase leading-[101px]">Интенсив?</p>
         </div>
 
-        {/* video tiles */}
-        <div className="absolute" style={{ left: 380, top: 311, width: 560, height: 300 }}>
-          <Image src="/images/section7/video1.webp" alt="" fill className="object-contain" sizes="560px" />
-        </div>
-        <div className="absolute" style={{ left: 980, top: 311, width: 560, height: 300 }}>
-          <Image src="/images/section7/video2.webp" alt="" fill className="object-contain" sizes="560px" />
-        </div>
-        <div className="absolute" style={{ left: 620, top: 421, width: 80, height: 80 }}>
-          <Image src="/images/section7/play.webp" alt="" fill className="object-contain" sizes="80px" />
-        </div>
-        <div className="absolute" style={{ left: 1220, top: 421, width: 80, height: 80 }}>
-          <Image src="/images/section7/play.webp" alt="" fill className="object-contain" sizes="80px" />
-        </div>
+        {/* video tiles — clickable */}
+        {VIDEOS.map((v) => (
+          <button
+            key={v.left}
+            type="button"
+            onClick={() => setActiveId(v.youtubeId)}
+            aria-label="Смотреть видео"
+            className="group absolute cursor-pointer overflow-hidden rounded-[20px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            style={{ left: v.left, top: 311, width: 560, height: 300 }}
+          >
+            <Image src={v.img} alt="" fill className="object-contain transition duration-300 group-hover:scale-[1.03]" sizes="560px" />
+          </button>
+        ))}
+        {VIDEOS.map((v) => (
+          <div key={`play-${v.left}`} className="pointer-events-none absolute" style={{ left: v.play, top: 421, width: 80, height: 80 }}>
+            <Image src="/images/section7/play.webp" alt="" fill className="object-contain" sizes="80px" />
+          </div>
+        ))}
 
         {/* photo strip */}
         {PHOTOS.map((p) => (
@@ -60,6 +87,34 @@ export function Gallery() {
           </div>
         ))}
       </div>
+
+      {/* video lightbox */}
+      {activeId && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Видео"
+        >
+          <button aria-label="Закрыть" className="absolute inset-0 cursor-default bg-black/80 backdrop-blur-sm" onClick={() => setActiveId(null)} />
+          <button
+            aria-label="Закрыть"
+            onClick={() => setActiveId(null)}
+            className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full text-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+          >
+            ✕
+          </button>
+          <div className="relative z-0 aspect-video w-full max-w-[960px] overflow-hidden rounded-2xl bg-black shadow-2xl">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src={`https://www.youtube.com/embed/${activeId}?autoplay=1&rel=0`}
+              title="Видео — Как проходит интенсив"
+              allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
