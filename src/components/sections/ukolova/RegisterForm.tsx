@@ -43,9 +43,11 @@ export function RegisterForm() {
         </div>
 
         {/* heading */}
-        <div className="absolute" style={{ left: 425, top: 115, width: 1088 }}>
-          <p className="text-[61.8px] font-bold leading-[85px]">РЕГИСТРИРУЙТЕСЬ</p>
-          <p className="text-[61.8px] font-bold leading-[85px]">НА ЗАКРЫТЫЙ ТРЕНИНГ</p>
+        <div className="absolute" style={{ left: 425, top: 108, width: 1088 }}>
+          <p className="text-[64px] font-black uppercase leading-[76px] tracking-[-1px]">РЕГИСТРИРУЙТЕСЬ</p>
+          <p className="text-[64px] font-black uppercase leading-[76px] tracking-[-1px]">
+            на <span className="text-tan">закрытый тренинг</span>
+          </p>
         </div>
 
         {/* form */}
@@ -112,9 +114,10 @@ export function RegisterForm() {
               <div className="flex flex-col items-center pt-[15px]">
                 <button
                   type="submit"
-                  className="flex h-[120px] w-[400px] items-center justify-center rounded-[5px] bg-mongoose px-[15px] text-[21px] font-bold text-white transition hover:brightness-105 active:translate-y-[2px]"
+                  className="group flex h-[120px] w-[400px] items-center justify-center gap-3 rounded-[12px] bg-gradient-to-b from-[#d0b491] to-[#b8946f] px-[15px] text-[23px] font-extrabold uppercase text-white shadow-[0px_10px_30px_-6px_rgba(156,118,87,0.6)] transition-all duration-300 hover:from-[#d8bd9b] hover:to-[#bf9b75] active:translate-y-[2px]"
                 >
                   Зарегистрироваться
+                  <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
                 </button>
               </div>
             </form>

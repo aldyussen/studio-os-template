@@ -42,11 +42,16 @@ export function Benefits() {
         style={{ transform: 'scale(calc(100cqw / 1920px))' }}
       >
         {/* dark card */}
-        <div className="absolute rounded-[30px] bg-[#242424]" style={{ left: 80, top: 51.19, width: 1760, height: 633.59 }} />
+        <div
+          className="absolute rounded-[30px] border border-white/5 bg-gradient-to-br from-[#2a2a2a] to-[#1c1c1c] shadow-[0px_30px_60px_-20px_rgba(0,0,0,0.5)]"
+          style={{ left: 80, top: 51.19, width: 1760, height: 633.59 }}
+        />
 
         {/* heading + sub */}
-        <div className="absolute" style={{ left: 147.19, top: 110, width: 1504 }}>
-          <p className="text-[59px] font-bold leading-[71px]">На тренинге вы получите:</p>
+        <div className="absolute" style={{ left: 147.19, top: 108, width: 1504 }}>
+          <p className="text-[62px] font-black uppercase leading-[68px] tracking-[-0.5px]">
+            На тренинге <span className="text-tan">вы получите:</span>
+          </p>
         </div>
         <div className="absolute" style={{ left: 152, top: 233, width: 1046.39 }}>
           <p className="text-[20px] font-normal leading-[31px]">Методику увеличения прибыли х2–х3 в текущем бизнесе</p>

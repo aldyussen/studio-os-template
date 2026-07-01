@@ -91,6 +91,12 @@ export function Hero() {
         className="absolute left-0 top-0 h-[1152px] w-[1920px] origin-top-left font-[family-name:var(--font-inter-local)] text-white"
         style={{ transform: 'scale(calc(100cqw / 1920px))' }}
       >
+        {/* warm glow for depth */}
+        <div
+          className="pointer-events-none absolute rounded-full"
+          style={{ left: 1000, top: 60, width: 940, height: 940, background: 'radial-gradient(circle, rgba(199,163,121,0.30) 0%, rgba(199,163,121,0.08) 45%, transparent 68%)' }}
+        />
+
         {/* background decor */}
         <div className="absolute flex items-center justify-center" style={{ left: 744.62, top: 71.03, width: 504.955, height: 550.714 }}>
           <div className="rotate-[13deg] opacity-5" style={{ width: 459.19 }}>
@@ -117,14 +123,15 @@ export function Hero() {
         </div>
 
         {/* eyebrow */}
-        <div className="absolute" style={{ left: 72, top: 178.98, width: 1016 }}>
-          <p className="text-[24px] font-light leading-[24px]">Моя цель -</p>
+        <div data-anim="hfade" className="absolute flex items-center gap-3" style={{ left: 72, top: 176, width: 1016 }}>
+          <span className="h-px w-[34px] bg-tan" />
+          <p className="text-[15px] font-semibold uppercase leading-none tracking-[0.22em] text-tan">Моя цель</p>
         </div>
 
         {/* H1 */}
-        <div className="absolute flex flex-col gap-[30.59px]" style={{ left: 72, top: 239, width: 1016 }}>
-          <p data-anim="hline" className="text-[39px] font-semibold uppercase leading-[51px]">Сделать из бизнесмена</p>
-          <p data-anim="hline" className="text-[39px] font-semibold uppercase leading-[51px]">долларового миллионера</p>
+        <div className="absolute flex flex-col gap-[2px]" style={{ left: 72, top: 210, width: 1050 }}>
+          <p data-anim="hline" className="text-[58px] font-black uppercase leading-[62px] tracking-[-0.5px]">Сделать из бизнесмена</p>
+          <p data-anim="hline" className="text-[58px] font-black uppercase leading-[62px] tracking-[-0.5px] text-tan">долларового миллионера</p>
         </div>
 
         {/* subtitle */}
@@ -162,10 +169,11 @@ export function Hero() {
           type="button"
           onClick={open}
           aria-label="Зарегистрироваться"
-          className="absolute flex items-center justify-center rounded-[10px] bg-mongoose uppercase text-white shadow-[0px_5px_0px_0px_rgba(156,118,87,0.9)] transition hover:brightness-105 active:translate-y-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          className="group absolute flex items-center justify-center gap-3 overflow-hidden rounded-[14px] bg-gradient-to-b from-[#d0b491] to-[#b8946f] uppercase text-white shadow-[0px_10px_30px_-6px_rgba(156,118,87,0.7)] transition-all duration-300 hover:from-[#d8bd9b] hover:to-[#bf9b75] hover:shadow-[0px_16px_40px_-6px_rgba(156,118,87,0.85)] active:translate-y-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
           style={{ left: 75.19, top: 702.39, width: 716.8, height: 182.39 }}
         >
-          <span className="text-[19px] font-semibold leading-[29.45px] tracking-[-0.1px]">Зарегистрироваться</span>
+          <span className="text-[24px] font-extrabold tracking-[0.01em]">Зарегистрироваться</span>
+          <span className="text-[26px] transition-transform duration-300 group-hover:translate-x-1.5">→</span>
         </button>
 
         {/* note + timer */}
@@ -177,19 +185,19 @@ export function Hero() {
         </div>
 
         {/* stats */}
-        <div className="absolute opacity-70" style={{ left: 916.8, top: 1056 }}>
-          <p data-count="1000" className="text-[35px] font-bold leading-[54px]">1000</p>
+        <div className="absolute" style={{ left: 916.8, top: 1044 }}>
+          <p data-count="1000" className="text-[54px] font-black leading-[54px] text-tan">1000</p>
         </div>
-        <div className="absolute flex flex-col gap-[12.6px] opacity-70" style={{ left: 1097.59, top: 1055.59, width: 326.39 }}>
-          <p className="text-[16px] font-semibold leading-[21px]">Специализация в разных</p>
-          <p className="text-[16px] font-semibold leading-[21px]">сферах бизнеса</p>
+        <div className="absolute flex flex-col gap-[12.6px]" style={{ left: 1097.59, top: 1055.59, width: 326.39 }}>
+          <p className="text-[16px] font-semibold leading-[21px] text-white/75">Специализация в разных</p>
+          <p className="text-[16px] font-semibold leading-[21px] text-white/75">сферах бизнеса</p>
         </div>
-        <div className="absolute opacity-70" style={{ left: 1496, top: 1056 }}>
-          <p data-count="8500" className="text-[35px] font-bold leading-[54px]">8500</p>
+        <div className="absolute" style={{ left: 1496, top: 1044 }}>
+          <p data-count="8500" className="text-[54px] font-black leading-[54px] text-tan">8500</p>
         </div>
-        <div className="absolute flex flex-col gap-[12.6px] opacity-70" style={{ left: 1681.59, top: 1055.59, width: 238.39 }}>
-          <p className="text-[16px] font-semibold leading-[21px]">Реализованные</p>
-          <p className="text-[16px] font-semibold leading-[21px]">проекты</p>
+        <div className="absolute flex flex-col gap-[12.6px]" style={{ left: 1681.59, top: 1055.59, width: 238.39 }}>
+          <p className="text-[16px] font-semibold leading-[21px] text-white/75">Реализованные</p>
+          <p className="text-[16px] font-semibold leading-[21px] text-white/75">проекты</p>
         </div>
 
         {/* speaker card */}

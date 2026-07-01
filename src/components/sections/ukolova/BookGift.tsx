@@ -22,12 +22,12 @@ export function BookGift() {
         </div>
 
         {/* heading */}
-        <div className="absolute flex flex-col gap-[24.6px]" style={{ left: 702.39, top: 128.3, width: 1020.8 }}>
-          <p className="text-[34px] font-bold leading-[41px]">
+        <div className="absolute flex flex-col gap-[14px]" style={{ left: 702.39, top: 120, width: 1020.8 }}>
+          <p className="text-[42px] font-black uppercase leading-[46px] tracking-[-0.5px]">
             <span className="text-mongoose">Каждому участнику тренинга</span> в
           </p>
-          <p className="text-[34px] font-bold leading-[41px]">подарок новая книга Екатерины</p>
-          <p className="text-[34px] font-bold leading-[41px]">Уколовой</p>
+          <p className="text-[42px] font-black uppercase leading-[46px] tracking-[-0.5px]">подарок новая книга Екатерины</p>
+          <p className="text-[42px] font-black uppercase leading-[46px] tracking-[-0.5px]">Уколовой</p>
         </div>
 
         {/* price */}
@@ -51,10 +51,11 @@ export function BookGift() {
           type="button"
           onClick={open}
           aria-label="Принять участие"
-          className="absolute flex items-center justify-center rounded-[10px] bg-mongoose uppercase text-white shadow-[0px_5px_0px_0px_rgba(156,118,87,0.9)] transition hover:brightness-105 active:translate-y-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          className="group absolute flex items-center justify-center gap-3 rounded-[14px] bg-gradient-to-b from-[#d0b491] to-[#b8946f] uppercase text-white shadow-[0px_10px_30px_-6px_rgba(156,118,87,0.6)] transition-all duration-300 hover:from-[#d8bd9b] hover:to-[#bf9b75] hover:shadow-[0px_16px_40px_-6px_rgba(156,118,87,0.8)] active:translate-y-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
           style={{ left: 705.59, top: 473.59, width: 662.39, height: 182.39 }}
         >
-          <span className="text-[23px] font-semibold leading-[35.65px]">ПРИНЯТЬ УЧАСТИЕ</span>
+          <span className="text-[26px] font-extrabold tracking-[0.01em]">ПРИНЯТЬ УЧАСТИЕ</span>
+          <span className="text-[26px] transition-transform duration-300 group-hover:translate-x-1.5">→</span>
         </button>
       </div>
     </section>

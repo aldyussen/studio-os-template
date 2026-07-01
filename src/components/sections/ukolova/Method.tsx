@@ -28,12 +28,12 @@ export function Method() {
         style={{ transform: 'scale(calc(100cqw / 1920px))' }}
       >
         {/* heading */}
-        <div className="absolute flex flex-col items-center gap-[30px] text-center" style={{ left: 240, top: 104, width: 1444.8 }}>
-          <p className="text-[42px] font-bold leading-[50px]">
+        <div className="absolute flex flex-col items-center gap-[16px] text-center" style={{ left: 220, top: 96, width: 1484.8 }}>
+          <p className="text-[50px] font-black uppercase leading-[54px] tracking-[-0.5px]">
             <span className="text-[#171717]">Метод Уколовой из 8 шагов </span>
             <span className="text-mongoose">х2 увеличения</span>
           </p>
-          <p className="text-[42px] font-bold leading-[50px]">
+          <p className="text-[50px] font-black uppercase leading-[54px] tracking-[-0.5px]">
             <span className="text-mongoose">личной прибыли</span>
             <span className="text-[#171717]"> в бизнесе</span>
           </p>
