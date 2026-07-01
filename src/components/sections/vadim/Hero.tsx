@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { interLocal } from './inter-local'
 import { gsap, useGSAP } from '@/lib/gsap'
 import { useLeadModal } from './LeadModal'
+import { useDiagnosticModal } from './DiagnosticModal'
+import { vadimDiagnostic } from '@/config/vadim-diagnostic'
 
 const GRID_TALL = [160, 360, 560, 760, 960, 1160, 1360, 1560, 1760]
 const GRID_SHORT = [199, 399, 599, 799, 999, 1199, 1399, 1599, 1799]
@@ -12,7 +14,9 @@ const GRID_SHORT = [199, 399, 599, 799, 999, 1199, 1399, 1599, 1799]
 export function Hero() {
   const scope = useRef<HTMLElement>(null)
   const ctaRef = useRef<HTMLButtonElement>(null)
+  const glowRef = useRef<HTMLDivElement>(null)
   const { open } = useLeadModal()
+  const { open: openDiagnostic } = useDiagnosticModal()
 
   useGSAP(
     () => {
@@ -169,6 +173,27 @@ export function Hero() {
         {/* CTA label — on top of both */}
         <div data-anim="hcta" data-magnet className="pointer-events-none absolute text-center" style={{ left: 406, top: 667, width: 246 }}>
           <p className="text-[15.9px] font-extrabold leading-[22px] text-white">ОСТАВИТЬ ЗАЯВКУ</p>
+        </div>
+
+        {/* secondary CTA — express diagnostic (subordinate to primary) */}
+        <div data-anim="hcta" className="absolute" style={{ left: 704, top: 648, width: 300, height: 60 }}>
+          <div
+            ref={glowRef}
+            aria-hidden
+            className="pointer-events-none absolute -inset-2 rounded-[14px] opacity-0 blur-xl"
+            style={{ background: 'linear-gradient(90deg,#ff598e,#7f50ea)' }}
+          />
+          <button
+            type="button"
+            onClick={openDiagnostic}
+            onMouseEnter={() => gsap.to(glowRef.current, { opacity: 0.5, scale: 1.05, duration: 0.3, ease: 'power2.out' })}
+            onMouseLeave={() => gsap.to(glowRef.current, { opacity: 0, scale: 1, duration: 0.3, ease: 'power2.out' })}
+            aria-label={vadimDiagnostic.hero.ariaLabel}
+            className="relative z-10 flex h-full w-full flex-col items-center justify-center rounded-[10px] border border-white/25 bg-white/[0.03] px-4 text-center backdrop-blur-sm transition-colors duration-200 hover:border-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          >
+            <span className="text-[13.5px] font-bold leading-[16px] text-white">{vadimDiagnostic.hero.ctaLine1}</span>
+            <span className="text-[12px] font-light leading-[15px] text-white/70">{vadimDiagnostic.hero.ctaLine2}</span>
+          </button>
         </div>
 
         {/* ── right cluster ── */}

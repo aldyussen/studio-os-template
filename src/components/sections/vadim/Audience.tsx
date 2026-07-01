@@ -93,11 +93,11 @@ export function Audience() {
         </div>
 
         {/* card 2 */}
-        <div data-anim="cardtext" className="absolute" style={{ left: 1113, top: 314, width: 275 }}>
-          <p className="text-[39.8px] font-black uppercase leading-[40px]">Проблема</p>
-          <p className="text-[39.8px] font-black uppercase leading-[40px]">с рекламой</p>
+        <div data-anim="cardtext" className="absolute" style={{ left: 1113, top: 314, width: 360 }}>
+          <p className="whitespace-nowrap text-[39.8px] font-black uppercase leading-[46px]">Проблема</p>
+          <p className="whitespace-nowrap text-[39.8px] font-black uppercase leading-[46px]">с рекламой</p>
         </div>
-        <div data-anim="cardtext" className="absolute" style={{ left: 1113, top: 415, width: 175 }}>
+        <div data-anim="cardtext" className="absolute" style={{ left: 1113, top: 430, width: 175 }}>
           <p className="text-[17.9px] font-extrabold leading-[25px]">Сливаешь деньги</p>
           <p className="text-[17.9px] font-normal leading-[25px]">и не получаешь</p>
           <p className="text-[17.9px] font-normal leading-[25px]">заявки</p>

@@ -9,24 +9,27 @@ import { Marquee } from '@/components/sections/vadim/Marquee'
 import { FooterCta } from '@/components/sections/vadim/FooterCta'
 import { ScrollSetup } from '@/components/sections/vadim/ScrollSetup'
 import { LeadModalProvider } from '@/components/sections/vadim/LeadModal'
+import { DiagnosticModalProvider } from '@/components/sections/vadim/DiagnosticModal'
 import { StickyCta } from '@/components/sections/vadim/StickyCta'
 
 export default function VadimPage() {
   return (
     <LeadModalProvider>
-      <div id="top" className="scroll-mt-0 bg-[#070707]">
-        <ScrollSetup />
-        <Hero />
-        <Benefits />
-        <Audience />
-        <Program />
-        <Speaker />
-        <Results />
-        <Gallery />
-        <Marquee />
-        <FooterCta />
-        <StickyCta />
-      </div>
+      <DiagnosticModalProvider>
+        <div id="top" className="scroll-mt-0 bg-[#070707]">
+          <ScrollSetup />
+          <Hero />
+          <Benefits />
+          <Audience />
+          <Program />
+          <Speaker />
+          <Results />
+          <Gallery />
+          <Marquee />
+          <FooterCta />
+          <StickyCta />
+        </div>
+      </DiagnosticModalProvider>
     </LeadModalProvider>
   )
 }
