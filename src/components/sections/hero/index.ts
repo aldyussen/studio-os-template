@@ -1,1 +1,0 @@
-export { HeroCentered } from './HeroCentered'
